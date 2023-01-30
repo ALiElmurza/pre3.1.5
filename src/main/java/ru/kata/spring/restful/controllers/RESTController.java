@@ -10,7 +10,7 @@ import ru.kata.spring.restful.services.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("")
 public class RESTController {
 
     private final AdminService adminService;
