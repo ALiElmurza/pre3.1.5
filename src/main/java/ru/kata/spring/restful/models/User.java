@@ -4,6 +4,8 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import ru.kata.spring.restful.models.Role;
+
 import javax.persistence.*;
 import java.util.*;
 
