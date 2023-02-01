@@ -56,6 +56,12 @@ public class UserService implements UserDetailsService {
     }
 
     @Transactional
+    public void add(User user) {
+        user.setPassword(BCryptPassword().encode(user.getPassword()));
+        userRepository.save(user);
+    }
+
+    @Transactional
     public Role saveRole(Role role) {
         Role roleDB = roleRepository.findByName(role.getName());
         if (roleDB == null) {

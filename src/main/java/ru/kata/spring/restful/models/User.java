@@ -19,9 +19,9 @@ public class User implements UserDetails {
     @Column(name = "username")
     private String username;
     @Column(name = "firstname")
-    private String firstname;
+    private String firstName;
     @Column(name = "lastname")
-    private String lastname;
+    private String lastName;
     @Column(name = "age")
     private int age;
     @Column(name = "email")
@@ -31,7 +31,6 @@ public class User implements UserDetails {
     @Column(name = "hashPassword")
     private String hashPassword;
 
-//    private String email;
 
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -49,11 +48,21 @@ public class User implements UserDetails {
         this.username = username;
         this.password = password;
         this.hashPassword = password;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstName = firstname;
+        this.lastName = lastname;
         this.age = age;
         this.email = email;
 
+    }
+    public User(String username, String password, String firstname, String lastname, int age, String email, Set<Role> roles) {
+        this.username = username;
+        this.password = password;
+        this.hashPassword = password;
+        this.firstName = firstname;
+        this.lastName = lastname;
+        this.age = age;
+        this.email = email;
+        this.roles = roles;
     }
 
     public void addRoleToUser(Role role) {
@@ -71,20 +80,20 @@ public class User implements UserDetails {
         this.hashPassword = hashPassword;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstname) {
+        this.firstName = firstname;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastname) {
+        this.lastName = lastname;
     }
 
     public int getAge() {

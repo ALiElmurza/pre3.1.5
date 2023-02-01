@@ -32,16 +32,17 @@ async function newUser() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                username: formAddNewUser.username.value,
+                password: formAddNewUser.password.value,
                 firstName: formAddNewUser.firstName.value,
                 lastName: formAddNewUser.lastName.value,
                 age: formAddNewUser.age.value,
                 email: formAddNewUser.email.value,
-                password: formAddNewUser.password.value,
                 roles: rolesNewUser
             })
         }).then(() => {
             formAddNewUser.reset();
-            users();
+            allUsers();
             $('#allUsersTable').click();
         })
             .catch((error) => {

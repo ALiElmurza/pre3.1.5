@@ -30,7 +30,7 @@ function editCurrentUser() {
             })
         }).then(() => {
             $('#editFormCloseButton').click();
-            users();
+            allUsers();
         })
             .catch((error) => {
                 alert(error);

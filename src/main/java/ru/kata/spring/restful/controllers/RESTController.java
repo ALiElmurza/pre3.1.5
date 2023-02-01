@@ -52,7 +52,7 @@ public class RESTController {
 
     @PostMapping(value = "/api/admin")
     public ResponseEntity<User> addUserAction(@RequestBody User user) {
-        userService.save(user);
+        userService.add(user);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
