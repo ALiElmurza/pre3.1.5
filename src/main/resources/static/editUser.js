@@ -27,6 +27,7 @@ function editCurrentUser() {
                 age: editForm.age.value,
                 email: editForm.email.value,
                 password: editForm.password.value,
+                hashPassword: editForm.hashPassword.value,
                 roles: editUserRoles
             })
         }).then(() => {

@@ -46,7 +46,6 @@ async function viewDeleteModal(id) {
 }
 
 async function getUser(id) {
-
     let url = "http://localhost:8088/api/admin/" + id;
     let response = await fetch(url);
     return await response.json();
