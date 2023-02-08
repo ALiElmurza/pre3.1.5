@@ -57,8 +57,14 @@ public class UserService implements UserDetailsService {
 
     @Transactional
     public void add(User user) {
-        user.setPassword(BCryptPassword().encode(user.getPassword()));
-        userRepository.save(user);
+        User userFromDB = userRepository.findByUsername(user.getUsername());
+        if (userFromDB != null) {
+            //ignore
+        } else {
+            user.setPassword(BCryptPassword().encode(user.getPassword()));
+            user.setHashPassword(user.getPassword());
+            userRepository.save(user);
+        }
     }
 
     @Transactional

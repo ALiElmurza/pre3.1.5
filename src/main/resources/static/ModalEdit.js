@@ -14,6 +14,7 @@ async function viewEditModal(id) {
     let userEdit = await getUser(id);
     let form = document.forms["formEditUser"];
     form.id.value = userEdit.id;
+    form.username.value = userEdit.username;
     form.firstName.value = userEdit.firstName;
     form.lastName.value = userEdit.lastName;
     form.age.value = userEdit.age;

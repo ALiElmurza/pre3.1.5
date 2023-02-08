@@ -16,6 +16,7 @@ async function loadUser() {
             let user = `$(
             <tr>
                 <td>${data.id}</td>
+                <td>${data.username}</td>
                 <td>${data.firstName}</td>
                 <td>${data.lastName}</td>
                 <td>${data.age}</td>

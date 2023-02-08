@@ -51,11 +51,11 @@ public class AdminService {
     @Transactional
     public void update(User user) {
         if (user.getPassword().equals(user.getHashPassword())) {
-            userRepository.saveAndFlush(user);
+            userRepository.save(user);
         } else {
             user.setPassword(BCrypt().encode(user.getPassword()));
             user.setHashPassword(user.getPassword());
-            userRepository.saveAndFlush(user);
+            userRepository.save(user);
         }
     }
     @Transactional

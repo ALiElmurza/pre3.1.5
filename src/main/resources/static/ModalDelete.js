@@ -14,6 +14,7 @@ async function viewDeleteModal(id) {
     let userDelete = await getUser(id);
     let formDelete = document.forms["formDeleteUser"];
     formDelete.id.value = userDelete.id;
+    formDelete.username.value = userDelete.username;
     formDelete.firstName.value = userDelete.firstName;
     formDelete.lastName.value = userDelete.lastName;
     formDelete.age.value = userDelete.age;

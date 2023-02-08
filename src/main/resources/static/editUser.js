@@ -21,6 +21,7 @@ function editCurrentUser() {
             },
             body: JSON.stringify({
                 id: editForm.id.value,
+                username: editForm.username.value,
                 firstName: editForm.firstName.value,
                 lastName: editForm.lastName.value,
                 age: editForm.age.value,
